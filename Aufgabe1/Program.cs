@@ -32,12 +32,12 @@ namespace Aufgabe1
             IEnumerable<Spielkarte> Kartenspiel = (from Kartenfarbe in Spielkarte.Kartenfarben()
                                                    from Kartenwert in Spielkarte.Kartenwerte()
                                                    select new Spielkarte(Kartenfarbe, Kartenwert)).ToList();
-            Console.Write("Kartenspiel: ");            
+            Console.Write("Kartenspiel: ");
             foreach (Spielkarte k in Kartenspiel)
             {
                 Console.Write(k + " ");
             }
-                        
+            
             
             Console.WriteLine();
             Console.WriteLine();
@@ -62,7 +62,8 @@ namespace Aufgabe1
 
             Console.WriteLine();
 
-            Console.WriteLine("\nSpielkarten gemischt: " + !Kartenspiel.VergleichenMit(Spielkarten));                       
+            Console.WriteLine("\nSpielkarten gemischt: " + !Kartenspiel.VergleichenMit(Spielkarten));
+            Console.ReadKey();
         }
     }
 }

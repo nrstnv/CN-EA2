@@ -17,10 +17,21 @@ namespace Aufgabe1
         /// <returns></returns>
         public static IEnumerable<T> MischenMit<T>(this IEnumerable<T> stapel1, IEnumerable<T> stapel2)
         {
-            for (int index = 0; index < stapel1.Count(); index++)
+            // Inefizienter Ansatz
+            //for (int index = 0; index < stapel1.Count(); index++)
+            //{
+            //    yield return stapel1.ElementAt(index);
+            //    yield return stapel2.ElementAt(index);
+            //}
+
+            // Bessere Vorgehensweise, da die Eigenschaften der Aufzählungen
+            // zum Iterieren eingesetzt werden
+            var s1 = stapel1.GetEnumerator();
+            var s2 = stapel2.GetEnumerator();
+            while (s1.MoveNext() && s2.MoveNext())
             {
-                yield return stapel1.ElementAt(index);
-                yield return stapel2.ElementAt(index);
+                yield return s1.Current;
+                yield return s2.Current;
             }
         }
 
