@@ -36,7 +36,7 @@ namespace Aufgabe2
         /// vom Typ TItemType generiert und initialisiert. Die Methode gibt dieses Objekt als Ergebnis
         /// zurück.
         /// </summary>
-        public static TItemType MakeItem()
+        public TItemType MakeItem()
         {
             var item = new TItemType();
             item.Initialize(Parameter);
@@ -51,14 +51,14 @@ namespace Aufgabe2
         /// </summary>
         /// <param name="count"></param>
         /// <returns></returns>
-        public static TItemType[] MakeItems(int count)
+        public TItemType[] MakeItems(int count)
         {
-            List<TItemType> items = new List<TItemType>();
+            TItemType[] items = new TItemType[count];
             for (int i = 0; i < count; i++)
             {                
-                items.Add(MakeItem());
+                items[i] = MakeItem();
             }
-            return items.ToArray();
+            return items;
         }
     }
 }

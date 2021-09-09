@@ -16,7 +16,7 @@ namespace Aufgabe2
         static void Main(string[] args)
         {
             var factory = new Factory<A, String>("en-US");
-            foreach (var item in Factory<A, string>.MakeItems(3))
+            foreach (var item in factory.MakeItems(3))
             {
                 Console.Write(item.Culture + " ");
             }
