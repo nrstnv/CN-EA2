@@ -35,6 +35,18 @@ namespace Aufgabe1
             Wert = kartenwert;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="o"></param>
+        /// <returns></returns>
+        public override bool Equals(object o)
+        {
+            if (o == null) return false;
+            Spielkarte other = o as Spielkarte;
+            if (other == null) return false;
+            return this.Farbe == other.Farbe && this.Wert == other.Wert;
+        }
         
         /// <summary>
         /// Die ToString() Methode wird hier überschrieben, so dass die Farbe und der Wert mit
